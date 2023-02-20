@@ -1,104 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'blog/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django App</title>
-</head>
+{% block content %}
 
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        background-color: #02001bf6;
-        color: #c7c7c7;
-    }
-
-    .home {
-        margin-bottom: 4%;
-    }
-
-    .section {
-        display: flex;
-        flex-flow: column wrap;
-        align-content: space-around;
-        justify-content: center;
-        align-items: stretch;
-    }
-
-    .home .section a,
-    .home .section a:active,
-    .home .section a::after {
-        color: #c7c7c7;
-        background-color: #ffffff5e;
-        border-radius: 5px;
-        padding: 0 3px 0 3px;
-    }
-
-    .section h1 {
-        text-shadow: 2px 3px 1px #000000;
-    }
-
-    .section-header {
-        font-weight: bold;
-    }
-
-    footer {
-        text-align: center;
-        padding: 1%;
-        background-color: #00000098;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
-</style>
-
-<body>
-    <div class="home">
-        <div class="section">
-            <h1>A Simple Blog Page Made with Django</h1>
-            <p>
-                Blog page made using Django, hosted on <a
-                    href="https://github.com/lauraFCa/Python-Projects/tree/master/BlogWebAppInDjango"
-                    target="_blank">Github</a> and deployed with <a href="https://www.pythonanywhere.com/"
-                    target="_blank">PythonAnywhere</a>. <br>
-                This is a small learning application to increase Python knowledge and get more familiar with Django
-                framework
-            </p>
-        </div>
-        <div class="section">
-            <span class="section-header">About Me:</span>
-            <p>
-                👋🏽 Hi, I'm Laura <br />
-                📈 I'm interested in learning and improving as much as I can <br />
-                🐍 I've always been a huge Python fan, so a lot of studying and tinkering here is Python related :D
-                <br />
-                👩🏽‍💻 I'm currently working as Junior QA, and loving it! <br />
-                👩🏽‍🎓 I'm in college for Software Engineering and recently graduated in Mechatronics Engineering
-                <br />
-            </p>
-            <div class="stats">
-                <img src="https://camo.githubusercontent.com/9257832538ab66b7cd816da0d2c5a3c75db94aaebea369a6a3e49cab1f9bd49f/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d6c61757261464361266c61796f75743d636f6d70616374267468656d653d746f6b796f6e6967687426686964653d48544d4c"
-                    alt="Top Langs"
-                    data-canonical-src="https://github-readme-stats.vercel.app/api/top-langs/?username=lauraFCa&amp;layout=compact&amp;theme=tokyonight&amp;hide=HTML"
-                    style="max-width: 100%;">
-            </div>
-        </div>
-        <div class="section">
-            {{posts}}
+<div class="home">
+    <div class="section">
+        <h1>A Simple Blog Page Made with Django</h1>
+        <p>
+            Blog page made using Django, hosted on <a
+                href="https://github.com/lauraFCa/Python-Projects/tree/master/BlogWebAppInDjango"
+                target="_blank">Github</a> and deployed with <a href="https://www.pythonanywhere.com/"
+                target="_blank">PythonAnywhere</a>. <br>
+            This is a small learning application to increase Python knowledge and get more familiar with Django
+            framework
+        </p>
+    </div>
+    <div class="section">
+        <span class="section-header">About Me:</span>
+        <p>
+            👋🏽 Hi, I'm Laura <br />
+            📈 I'm interested in learning and improving as much as I can <br />
+            🐍 I've always been a huge Python fan, so a lot of studying and tinkering here is Python related :D
+            <br />
+            👩🏽‍💻 I'm currently working as Junior QA, and loving it! <br />
+            👩🏽‍🎓 I'm in college for Software Engineering and recently graduated in Mechatronics Engineering
+            <br />
+        </p>
+        <div class="stats">
+            <img src="https://camo.githubusercontent.com/9257832538ab66b7cd816da0d2c5a3c75db94aaebea369a6a3e49cab1f9bd49f/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d6c61757261464361266c61796f75743d636f6d70616374267468656d653d746f6b796f6e6967687426686964653d48544d4c"
+                alt="Top Langs"
+                data-canonical-src="https://github-readme-stats.vercel.app/api/top-langs/?username=lauraFCa&amp;layout=compact&amp;theme=tokyonight&amp;hide=HTML"
+                style="max-width: 100%;">
         </div>
     </div>
-    <footer>
-        <a href="https://www.linkedin.com/in/laura-faria-castro/" target="_blank">
-            <img src="https://camo.githubusercontent.com/e67ed2f1eaf78ba71c68237e69e60e618ab8dc82a28d07ad0dfa51f4682dccf2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4c6175726125323043617374726f2d3033333966633f7374796c653d666c61742d737175617265266c6f676f3d4c696e6b6564696e266c6f676f436f6c6f723d7768697465266c696e6b3d68747470733a2f2f7777772e6c696e6b6564696e2e636f6d2f696e2f6c617572614643612f"
-                alt="Linkedin Badge"
-                data-canonical-src="https://img.shields.io/badge/-Laura%20Castro-0339fc?style=flat-square&amp;logo=Linkedin&amp;logoColor=white&amp;link=https://www.linkedin.com/in/lauraFCa/"
-                style="max-width: 100%;">
-        </a>
-    </footer>
-</body>
-
-</html>
+    <div class="section back">
+        <a href="/posts">Django Posts</a>
+    </div>
+</div>
+{% endblock %}

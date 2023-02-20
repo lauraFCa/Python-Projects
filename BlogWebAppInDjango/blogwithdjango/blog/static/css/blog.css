@@ -1,0 +1,92 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #02001bf6;
+    color: #c7c7c7;
+}
+
+.content,
+.home {
+    margin-bottom: 5%;
+}
+
+.section {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.section a,
+.section a:active,
+.section a::after {
+    border-radius: 5px;
+    padding: 0 3px 0 3px;
+}
+
+.content .section a,
+.content .section a:active,
+.content .section a::after {
+    color: #f0f0f0;
+    background-color: #ffffff02;
+}
+
+.home .section a,
+.home .section a:active,
+.home .section a::after {
+    color: #c7c7c7;
+    background-color: #ffffff5e;
+}
+
+.section h1 {
+    text-shadow: 2px 3px 1px #000000;
+}
+
+.section-header {
+    font-weight: bold;
+}
+
+article {
+    border: solid #ffffff8a 1px;
+    border-radius: 5px;
+    padding: 1%;
+    margin: 0.5%;
+    max-width: 70%;
+}
+
+.date {
+    font-style: italic;
+}
+
+.back {
+    text-align: left;
+    padding: 5px;
+}
+
+
+.back a {
+    margin: 15px 0 8px 0;
+    color: #818181;
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
+.back a:hover {
+    text-shadow: 1px 1px .6px #a3a3a3;
+}
+
+.single-post{
+    border-top: solid 20px rgba(6, 32, 104, 0.5);
+    padding: 10px 10% 10px 10%;
+    margin-bottom: 5%;
+}
+
+footer {
+    padding: 10px;
+    background-color: #00000098;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

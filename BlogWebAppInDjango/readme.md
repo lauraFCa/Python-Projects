@@ -117,6 +117,8 @@ Django template tags allow us to transfer Python-like things into HTML, so you c
 
 Code inside *html* file, to render Python code - the *|linebreaksbr* is piping the posts' text through a filter to convert line-breaks into paragraphs.
 ```
+{% extends 'blog/base.html' %}  # used to extend from a base template
+
 <div class="posts">
    {% for post in posts %}
       <article>

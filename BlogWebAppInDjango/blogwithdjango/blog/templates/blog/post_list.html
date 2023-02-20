@@ -1,91 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'blog/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django App</title>
-</head>
+{% block content %}
 
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        background-color: #02001bf6;
-        color: #c7c7c7;
-    }
-
-    .content {
-        margin-bottom: 4%;
-    }
-
-    .section {
-        display: flex;
-        flex-flow: column wrap;
-        align-content: space-around;
-        justify-content: center;
-        align-items: stretch;
-    }
-
-    .content .section a,
-    .content .section a:active,
-    .content .section a::after {
-        color: #f0f0f0;
-        background-color: #ffffff02;
-        border-radius: 5px;
-        padding: 0 3px 0 3px;
-    }
-
-    .section h1 {
-        text-shadow: 2px 3px 1px #000000;
-    }
-
-    .section-header {
-        font-weight: bold;
-    }
-
-    article {
-        border: solid #ffffff8a 1px;
-        border-radius: 5px;
-        padding: 1%;
-        margin: .5%;
-    }
-
-    footer {
-        text-align: center;
-        padding: 1%;
-        background-color: #00000098;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
-</style>
-
-<body>
-    <div class="content">
-        <div class="section">
-            <h1>A Simple Blog Page Made with Django</h1>
-            <div class="posts">
-                {% for post in posts %}
-                <article>
-                    <time>Published: {{ post.published_date }}</time>
-                    <h2><a href="">{{ post.title }}</a></h2>
-                    <p>{{ post.text|linebreaksbr }}</p>
-                </article>
-                {% endfor %}
-            </div>
-        </div>
+<div class="content">
+    <div class="section">
+        <h1>Blog posts list</h1>
     </div>
-    <footer>
-        <a href="https://www.linkedin.com/in/laura-faria-castro/" target="_blank">
-            <img src="https://camo.githubusercontent.com/e67ed2f1eaf78ba71c68237e69e60e618ab8dc82a28d07ad0dfa51f4682dccf2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4c6175726125323043617374726f2d3033333966633f7374796c653d666c61742d737175617265266c6f676f3d4c696e6b6564696e266c6f676f436f6c6f723d7768697465266c696e6b3d68747470733a2f2f7777772e6c696e6b6564696e2e636f6d2f696e2f6c617572614643612f"
-                alt="Linkedin Badge"
-                data-canonical-src="https://img.shields.io/badge/-Laura%20Castro-0339fc?style=flat-square&amp;logo=Linkedin&amp;logoColor=white&amp;link=https://www.linkedin.com/in/lauraFCa/"
-                style="max-width: 100%;">
-        </a>
-    </footer>
-</body>
-
-</html>
+    <div class="section">
+        {% for post in posts %}
+        <article>
+            <time class="date">Published: {{ post.published_date }}</time>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr|truncatewords:40 }}</p>
+        </article>
+        {% endfor %}
+    </div>
+    <div class="section back">
+        <a href="/">Home page</a>
+    </div>
+</div>
+{% endblock %}
