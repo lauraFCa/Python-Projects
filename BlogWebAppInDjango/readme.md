@@ -148,3 +148,8 @@ To update page with it:
 1. ``git pull``
 2. [Reload page](https://www.pythonanywhere.com/web_app_setup/)
 
+To activate static files (css):  
+```
+>>> workon <your-pythonanywhere-domain>.pythonanywhere.com
+>>> python manage.py collectstatic
+```
