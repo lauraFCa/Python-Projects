@@ -1,18 +1,22 @@
-{% extends 'blog/base.html' %}
-
-{% block content %}
+{% extends 'blog/base.html' %} {% block content %}
 <div class="single-post">
-    <div class="section">
-        {% if post.published_date %}
-        <time class="date">
-            {{ post.published_date }}
-        </time>
-        {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+  <div class="section">
+    <div class="section top">
+      {% if user.is_authenticated %}
+
+      <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
+        {% include './icons/pencil-fill.svg' %}
+      </a>
     </div>
-    <div class="back">
-        <a href="/posts">Posts page</a>
-    </div>
+
+    {% endif %} {% if post.published_date %}
+    <time class="date"> {{ post.published_date }} </time>
+    {% endif %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+  <div class="back">
+    <a href="/posts">Posts page</a>
+  </div>
 </div>
 {% endblock %}

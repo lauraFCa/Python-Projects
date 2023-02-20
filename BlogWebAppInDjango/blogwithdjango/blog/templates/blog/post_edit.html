@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %} {% block content %}
+
+<div class="section">
+  <h2>New post</h2>
+  <form method="POST" class="post-form">
+    {% csrf_token %} {{ form.as_p }}
+    <div class="button-div">
+      <button type="submit" class="save btn">Save</button>
+    </div>
+  </form>
+  <br/>
+  <div class="section back">
+    <a href="/posts">Django Posts</a>
+</div>
+</div>
+{% endblock %}
