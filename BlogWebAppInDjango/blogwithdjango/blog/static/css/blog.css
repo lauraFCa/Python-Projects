@@ -61,6 +61,14 @@ article {
     max-width: 70%;
 }
 
+article a{
+    color: #f0f0f0c2;
+}
+
+article a:hover{
+    color: #f0f0f0e8;
+}
+
 .date {
     font-style: italic;
 }
