@@ -19,6 +19,9 @@ To set environment variables automatically import:
 To handle forms, install *flask-wtf*:
 ``pip install flask-wtf``
 
+url_for(): allow to define a route with the correspondent function
+url_for('login') returns /login
+
 ## Secret Key in Flask
 
 Flask and some of its extensions use the value of the secret key as a cryptographic key, useful to generate signatures or tokens.  
