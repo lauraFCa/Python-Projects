@@ -2,6 +2,13 @@
 
 Create a Blog Web App In Django - [**Project Based Learning**](https://github.com/practical-tutorials/project-based-learning#web-applications-1)
 
+
+>[Final blog app](http://laurafca.pythonanywhere.com/) - Paths: 
+>- /posts
+>- /post/new/
+>- /post/1/
+
+
 Installing requirements: ``pip install -r requirements.txt``
 
 Starting the project:  
